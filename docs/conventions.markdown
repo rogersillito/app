@@ -7,4 +7,4 @@
 
 All tests for a component will be under the spec project in a file name [Component]Specs.cs. The file will contain an outer class named [Component]Specs. All tests will be contained as nested classes of the containing class.
 
-
+##For components that we write, null is not an allowable return value of value returning methods.
