@@ -19,9 +19,9 @@ namespace app.specs
     {
       Establish c = () =>
       {
+        command_registry = depends.on<IFindCommands>();
         command_that_can_run_the_request = fake.an<IProcessOneRequest>();
         request = fake.an<IContainRequestDetails>();
-        command_registry = depends.on<IFindCommands>();
 
         command_registry.setup(x => x.get_the_command_that_can_run(request)).Return(command_that_can_run_the_request);
       };
