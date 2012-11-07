@@ -30,7 +30,7 @@ namespace app
 
     public void shut_off()
     {
-     throw new SecurityException("..."); 
+      throw new SecurityException("...");
     }
   }
 }

@@ -36,6 +36,26 @@ namespace app.specs
 
         static IPrincipal principal;
       }
+      public class and_they_are_in_the_correct_security_group
+      {
+        Establish c = () =>
+        {
+          principal = fake.an<IPrincipal>();
+          principal.setup(x => x.IsInRole(Arg<string>.Is.Anything)).Return(true);
+
+          spec.change(() => Thread.CurrentPrincipal).to(principal);
+        };
+
+        Because b = () =>
+          sut.shut_off();
+
+        It should_not_do_anything = () =>
+        {
+        };
+          
+
+        static IPrincipal principal;
+      }
     }
 
     public class when_adding_two_positive_numbers : concern
