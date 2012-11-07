@@ -51,7 +51,7 @@ namespace app.specs
           the_special_case = fake.an<IProcessOneRequest>();
           all_the_commands = Enumerable.Range(1,100).Select(x => fake.an<IProcessOneRequest>()).ToList();
           depends.on<IEnumerable<IProcessOneRequest>>(all_the_commands);
-          depends.on<MissingCommandFactory_Behaviour>(() => the_special_case);
+          depends.on<ICreateTheCommandForARequestWhenItIsNotFound>(() => the_special_case);
         };
 
         It should_return_the_special_case = () =>
