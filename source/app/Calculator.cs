@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Data;
 using System.Security;
+using System.Threading;
 
 namespace app
 {
@@ -30,7 +31,10 @@ namespace app
 
     public void shut_off()
     {
-      throw new SecurityException("...");
+        if (!Thread.CurrentPrincipal.IsInRole("User"))
+        {
+            throw new SecurityException("Unauthorized");
+        }
     }
   }
 }
