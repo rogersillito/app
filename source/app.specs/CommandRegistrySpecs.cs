@@ -43,6 +43,23 @@ namespace app.specs
         static IProcessOneRequest the_command_that_can_run;
         static List<IProcessOneRequest> all_the_commands;
       }
+
+      public class and_it_does_not_have_the_command
+      {
+        Establish c = () =>
+        {
+          the_special_case = fake.an<IProcessOneRequest>();
+          all_the_commands = Enumerable.Range(1,100).Select(x => fake.an<IProcessOneRequest>()).ToList();
+          depends.on<IEnumerable<IProcessOneRequest>>(all_the_commands);
+          depends.on<MissingCommandFactory_Behaviour>(() => the_special_case);
+        };
+
+        It should_return_the_special_case = () =>
+          result.ShouldEqual(the_special_case);
+
+        static IProcessOneRequest the_special_case;
+        static List<IProcessOneRequest> all_the_commands;
+      }
       static IProcessOneRequest result;
       static IContainRequestDetails request;
     }
