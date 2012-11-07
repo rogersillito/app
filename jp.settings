@@ -2,6 +2,8 @@ config =
 {
   :has_iis_express => true,
   :iis_express => 'c:\utils\iis_express\iisexpress.exe',
-  :browser => 'C:\utils\firefox\firefox.exe'
+  :browser => 'C:\utils\firefox\firefox.exe',
+  :new_value => "This is the new value",
+  :start_url => "http://localhost:8080/views/departmentbrowser.aspx"
 }
 configatron.configure_from_hash config
