@@ -5,7 +5,7 @@ using System.Threading;
 
 namespace app
 {
-  public class Calculator
+  public class Calculator : ICalculate
   {
     IDbConnection connection;
 
@@ -31,10 +31,9 @@ namespace app
 
     public void shut_off()
     {
-        if (!Thread.CurrentPrincipal.IsInRole("User"))
-        {
-            throw new SecurityException("Unauthorized");
-        }
+      if (Thread.CurrentPrincipal.IsInRole("User")) return;
+
+      throw new SecurityException("Unauthorized");
     }
   }
 }
