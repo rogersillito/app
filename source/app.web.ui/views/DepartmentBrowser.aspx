@@ -4,7 +4,7 @@ Inherits="app.web.ui.views.DepartmentBrowser"
 CodeFile="DepartmentBrowser.aspx.cs"
  MasterPageFile="App.master" %>
 <asp:Content ID="content" runat="server" ContentPlaceHolderID="childContentPlaceHolder">
-    <p class="ListHead">Select An Department</p>
+    <p class="ListHead">fSelect An Department</p>
             <table>            
               <%-- for each department --%>
               <tr class="ListItem">

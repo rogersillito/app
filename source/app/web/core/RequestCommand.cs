@@ -2,14 +2,23 @@
 {
   public class RequestCommand : IProcessOneRequest
   {
+    IMatchARequest request_specification;
+    ISupportAUserFeature feature;
+
+    public RequestCommand(IMatchARequest request_specification, ISupportAUserFeature feature)
+    {
+      this.request_specification = request_specification;
+      this.feature = feature;
+    }
+
     public void run(IContainRequestDetails request)
     {
-      throw new System.NotImplementedException();
+      feature.run(request);
     }
 
     public bool can_run(IContainRequestDetails request)
     {
-      throw new System.NotImplementedException();
+      return request_specification(request);
     }
   }
 }
