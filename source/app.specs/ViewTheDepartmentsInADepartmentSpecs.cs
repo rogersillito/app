@@ -20,14 +20,14 @@ namespace app.specs
       Establish c = () =>
       {
         request = fake.an<IContainRequestDetails>();
-        department_repository = depends.on<IFindDepartments>();
+        information_in_the_store_repository = depends.on<IFindInformationInTheStore>();
         display_engine = depends.on<IDisplayInformation>();
         the_departments_in_a_department = new List<DepartmentItem>();
         view_departments_in_department_request = new ViewTheDepartmentsInADepartmentRequest();
 
         request.setup(x => x.map<ViewTheDepartmentsInADepartmentRequest>()).Return(view_departments_in_department_request);
 
-        department_repository.setup(x => x.get_the_departments_using(view_departments_in_department_request)).Return(the_departments_in_a_department);
+        information_in_the_store_repository.setup(x => x.get_the_departments_using(view_departments_in_department_request)).Return(the_departments_in_a_department);
       };
 
       Because b = () =>
@@ -37,7 +37,7 @@ namespace app.specs
         display_engine.received(x => x.display(the_departments_in_a_department));
 
 
-      static IFindDepartments department_repository;
+      static IFindInformationInTheStore information_in_the_store_repository;
       static IContainRequestDetails request;
       static IEnumerable<DepartmentItem> the_departments_in_a_department;
       static IDisplayInformation display_engine;

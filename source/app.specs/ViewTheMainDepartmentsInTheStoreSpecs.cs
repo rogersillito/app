@@ -20,11 +20,11 @@ namespace app.specs
       Establish c = () =>
       {
         request = fake.an<IContainRequestDetails>();
-        department_repository = depends.on<IFindDepartments>();
+        information_in_the_store_repository = depends.on<IFindInformationInTheStore>();
         display_engine = depends.on<IDisplayInformation>();
         the_main_departments = new List<DepartmentItem>();
 
-        department_repository.setup(x => x.get_the_main_departments()).Return(the_main_departments);
+        information_in_the_store_repository.setup(x => x.get_the_main_departments()).Return(the_main_departments);
       };
 
       Because b = () =>
@@ -40,7 +40,7 @@ namespace app.specs
 
         
 
-      static IFindDepartments department_repository;
+      static IFindInformationInTheStore information_in_the_store_repository;
       static IContainRequestDetails request;
       static IEnumerable<DepartmentItem> the_main_departments;
       static IDisplayInformation display_engine;

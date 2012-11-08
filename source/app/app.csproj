@@ -81,11 +81,15 @@
     <Compile Include="ICalculate.cs" />
     <Compile Include="MessageGenerator.cs" />
     <Compile Include="web\application\catalogbrowsing\DepartmentItem.cs" />
-    <Compile Include="web\application\catalogbrowsing\IFindDepartments.cs" />
-    <Compile Include="web\application\catalogbrowsing\stubs\StubDepartmentRepository.cs" />
+    <Compile Include="web\application\catalogbrowsing\IFindInformationInTheStore.cs" />
+    <Compile Include="web\application\catalogbrowsing\ProductItem.cs" />
+    <Compile Include="web\application\catalogbrowsing\SomethingNew.cs" />
+    <Compile Include="web\application\catalogbrowsing\stubs\StubStoreCatalog.cs" />
     <Compile Include="web\application\catalogbrowsing\ViewTheDepartmentsInADepartment.cs" />
     <Compile Include="web\application\catalogbrowsing\ViewTheDepartmentsInADepartmentRequest.cs" />
     <Compile Include="web\application\catalogbrowsing\ViewTheMainDepartmentsInTheStore.cs" />
+    <Compile Include="web\application\catalogbrowsing\ViewTheProductsInADepartment.cs" />
+    <Compile Include="web\application\catalogbrowsing\ViewTheProductsInADepartmentRequest.cs" />
     <Compile Include="web\core\aspnet\BasicHandler.cs" />
     <Compile Include="web\core\CommandRegistry.cs" />
     <Compile Include="web\core\FrontController.cs" />

@@ -1,5 +1,5 @@
-﻿using System.Web;
-using app.web.application.catalogbrowsing;
+﻿using System;
+using System.Web;
 
 namespace app.web.core.stubs
 {
@@ -14,8 +14,7 @@ namespace app.web.core.stubs
     {
       public TInputModel map<TInputModel>()
       {
-        object item = new ViewTheDepartmentsInADepartmentRequest();
-        return (TInputModel)item;
+        return Activator.CreateInstance<TInputModel>();
       }
     }
   }
