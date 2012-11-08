@@ -2,9 +2,15 @@
 {
   public class WebFormDisplayEngine: IDisplayInformation
   {
-    public void display<ReportModel>(ReportModel model)
+      ICreateViewsForReports view_factory;
+      public WebFormDisplayEngine(ICreateViewsForReports view_factory)
+      {
+          this.view_factory = view_factory;
+      }
+
+      public void display<ReportModel>(ReportModel model)
     {
-      throw new System.NotImplementedException();
+      view_factory.create_view_that_can_display(model);
     }
   }
 }
