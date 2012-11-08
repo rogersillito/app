@@ -23,8 +23,9 @@ namespace app.specs
         view_model = new ViewAReportSpecs.AnItem();
         view = fake.an<IHttpHandler>();
 
-        the_current_context = depends.on(ObjectFactory.web.create_http_context());
+        the_current_context = ObjectFactory.web.create_http_context();
         view_factory = depends.on<ICreateViewsForReports>();
+        depends.on<IGetTheCurrentlyExecutingWebRequest>(() => the_current_context);
 
         view_factory.setup(x => x.create_view_that_can_display(view_model)).Return(view);
       };

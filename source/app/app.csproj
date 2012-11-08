@@ -86,8 +86,15 @@
     <Compile Include="web\application\catalogbrowsing\ViewTheDepartmentsInADepartmentRequest.cs" />
     <Compile Include="web\application\catalogbrowsing\ViewTheProductsInADepartmentRequest.cs" />
     <Compile Include="web\core\aspnet\BasicHandler.cs" />
+    <Compile Include="web\core\aspnet\ICreatePageInstances.cs" />
     <Compile Include="web\core\aspnet\ICreateViewsForReports.cs" />
+    <Compile Include="web\core\aspnet\IDisplayA.cs">
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="web\core\aspnet\IFindPathsToPages.cs" />
+    <Compile Include="web\core\aspnet\IGetTheCurrentlyExecutingWebRequest.cs" />
     <Compile Include="web\core\aspnet\WebFormDisplayEngine.cs" />
+    <Compile Include="web\core\aspnet\WebFormFactory.cs" />
     <Compile Include="web\core\CachingQuery.cs" />
     <Compile Include="web\core\CommandRegistry.cs" />
     <Compile Include="web\core\FrontController.cs" />
@@ -105,7 +112,7 @@
     <Compile Include="web\core\ISupportAUserFeature.cs" />
     <Compile Include="web\core\RequestCommand.cs" />
     <Compile Include="web\core\SecuredQuery.cs" />
-    <Compile Include="web\core\stubs\StubDisplayEngine.cs" />
+    <Compile Include="web\core\stubs\StubPathRegistry.cs" />
     <Compile Include="web\core\stubs\StubRequestFactory.cs" />
     <Compile Include="web\core\stubs\StubSetOfCommands.cs" />
   </ItemGroup>

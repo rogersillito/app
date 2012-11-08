@@ -2,21 +2,25 @@
 
 namespace app.web.core.aspnet
 {
-    public class WebFormDisplayEngine : IDisplayInformation
+  public class WebFormDisplayEngine : IDisplayInformation
+  {
+    ICreateViewsForReports view_factory;
+    IGetTheCurrentlyExecutingWebRequest current_request;
+
+    public WebFormDisplayEngine():this(new WebFormFactory(),() => HttpContext.Current)
     {
-        ICreateViewsForReports view_factory;
-        readonly HttpContext http_context;
-
-        public WebFormDisplayEngine(ICreateViewsForReports view_factory, HttpContext http_context)
-        {
-            this.view_factory = view_factory;
-            this.http_context = http_context;
-        }
-
-        public void display<ReportModel>(ReportModel model)
-        {
-            IHttpHandler view = view_factory.create_view_that_can_display(model);
-            view.ProcessRequest(http_context);
-        }
     }
+
+    public WebFormDisplayEngine(ICreateViewsForReports view_factory, IGetTheCurrentlyExecutingWebRequest current_request)
+    {
+      this.view_factory = view_factory;
+      this.current_request = current_request;
+    }
+
+    public void display<ReportModel>(ReportModel model)
+    {
+      var view = view_factory.create_view_that_can_display(model);
+      view.ProcessRequest(current_request());
+    }
+  }
 }

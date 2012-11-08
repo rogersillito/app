@@ -1,5 +1,5 @@
 ﻿using app.web.core;
-using app.web.core.stubs;
+using app.web.core.aspnet;
 
 namespace app.web.application.catalogbrowsing
 {
@@ -14,11 +14,11 @@ namespace app.web.application.catalogbrowsing
       this.display_engine = display_engine;
     }
 
-    public ViewAReport(IFetchInformation<ReportModel> query) : this(query, new StubDisplayEngine())
+    public ViewAReport(IFetchInformation<ReportModel> query) : this(query, new WebFormDisplayEngine())
     {
     }
 
-    public ViewAReport(IFetchAReport<ReportModel> query_object):this(query_object.fetch_using)
+    public ViewAReport(IFetchAReport<ReportModel> query_object) : this(query_object.fetch_using)
     {
     }
 
