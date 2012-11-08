@@ -21,7 +21,7 @@ namespace app.web.core.stubs
 
     IProcessOneRequest build_report_for<TQueryObject, TModel>() where TQueryObject : IFetchAReport<TModel>, new()
     {
-      return new RequestCommand(x => true, new ViewInformation<TModel>(new TQueryObject()));
+      return new RequestCommand(x => true, new ViewAReport<TModel>(new TQueryObject()));
     }
 
     public class GetTheDepartmentsInADepartment : IFetchAReport<IEnumerable<DepartmentItem>>

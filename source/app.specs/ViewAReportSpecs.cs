@@ -6,11 +6,11 @@ using developwithpassion.specifications.rhinomocks;
 
 namespace app.specs
 {
-  [Subject(typeof(ViewInformation<>))]
-  public class ViewInformationSpecs
+  [Subject(typeof(ViewAReport<>))]
+  public class ViewAReportSpecs
   {
     public abstract class concern : Observes<ISupportAUserFeature,
-                                      ViewInformation<AnItem>>
+                                      ViewAReport<AnItem>>
     {
     }
 
