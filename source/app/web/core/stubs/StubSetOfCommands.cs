@@ -1,7 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using app.web.application.catalogbrowsing;
-using app.web.application.catalogbrowsing.stubs;
 
 namespace app.web.core.stubs
 {
@@ -19,16 +19,16 @@ namespace app.web.core.stubs
       yield return build_report_for<GetTheDepartmentsInADepartment, IEnumerable<DepartmentItem>>();
     }
 
-    IProcessOneRequest build_report_for<TQueryObject, TModel>() where TQueryObject : IFetchAReport<TModel>,new()
+    IProcessOneRequest build_report_for<TQueryObject, TModel>() where TQueryObject : IFetchAReport<TModel>, new()
     {
-      return new RequestCommand(x => true, new ViewInformation<TModel>(new TQueryObject()));  
+      return new RequestCommand(x => true, new ViewInformation<TModel>(new TQueryObject()));
     }
 
     public class GetTheDepartmentsInADepartment : IFetchAReport<IEnumerable<DepartmentItem>>
     {
       public IEnumerable<DepartmentItem> fetch_using(IContainRequestDetails request)
       {
-        return new StubStoreCatalog().get_the_departments_using(request.map<ViewTheDepartmentsInADepartmentRequest>());
+        return Enumerable.Range(1, 100).Select(x => new DepartmentItem {name = x.ToString("Child Department 0")});
       }
     }
 
@@ -36,7 +36,7 @@ namespace app.web.core.stubs
     {
       public IEnumerable<DepartmentItem> fetch_using(IContainRequestDetails request)
       {
-        return new StubStoreCatalog().get_the_main_departments();
+        return Enumerable.Range(1, 100).Select(x => new DepartmentItem {name = x.ToString("Department 0")});
       }
     }
 
@@ -44,7 +44,7 @@ namespace app.web.core.stubs
     {
       public IEnumerable<ProductItem> fetch_using(IContainRequestDetails request)
       {
-        return new StubStoreCatalog().get_the_products_using(request.map<ViewTheProductsInADepartmentRequest>());
+        return Enumerable.Range(1, 100).Select(x => new ProductItem {name = x.ToString("Product 0")});
       }
     }
   }
