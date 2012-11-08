@@ -86,13 +86,13 @@
     <Compile Include="web\application\catalogbrowsing\ViewTheDepartmentsInADepartmentRequest.cs" />
     <Compile Include="web\application\catalogbrowsing\ViewTheProductsInADepartmentRequest.cs" />
     <Compile Include="web\core\aspnet\BasicHandler.cs" />
+    <Compile Include="web\core\aspnet\ICreateViewsForReports.cs" />
     <Compile Include="web\core\aspnet\WebFormDisplayEngine.cs" />
     <Compile Include="web\core\CachingQuery.cs" />
     <Compile Include="web\core\CommandRegistry.cs" />
     <Compile Include="web\core\FrontController.cs" />
     <Compile Include="web\core\IContainRequestDetails.cs" />
     <Compile Include="web\core\ICreateControllerRequests.cs" />
-    <Compile Include="web\core\ICreateViewsForReports.cs" />
     <Compile Include="web\core\IDetermineIfACacheItemNeedsToBeRefreshed.cs" />
     <Compile Include="web\core\IDetermineIfAQueryCanBeRun.cs" />
     <Compile Include="web\core\IDisplayInformation.cs" />
