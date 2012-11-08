@@ -10,7 +10,8 @@ All tests for a component will be under the spec project in a file name [Compone
 ##For components that we write, null is not an allowable return value of value returning methods.
 
 ##1 Command per unique request
-##1 Logical view per view model
+##1 Logical view per View model
+##1 Input Model per unique request
 
 ##Stub Convention
   * All stubs must live in a stubs namespace under the namespace of where their contract lives.
