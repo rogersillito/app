@@ -21,8 +21,7 @@ namespace app.web.application.catalogbrowsing
 
     public void run(IContainRequestDetails request)
     {
-      display_engine.display(
-        information_in_the_store_repository.get_the_departments_using(request.map<ViewTheDepartmentsInADepartmentRequest>()));
+      display_engine.display(information_in_the_store_repository.get_the_departments_using(request.map<ViewTheDepartmentsInADepartmentRequest>()));
     }
   }
 }

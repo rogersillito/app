@@ -83,7 +83,7 @@
     <Compile Include="web\application\catalogbrowsing\DepartmentItem.cs" />
     <Compile Include="web\application\catalogbrowsing\IFindInformationInTheStore.cs" />
     <Compile Include="web\application\catalogbrowsing\ProductItem.cs" />
-    <Compile Include="web\application\catalogbrowsing\SomethingNew.cs" />
+    <Compile Include="web\application\catalogbrowsing\ViewInformation.cs" />
     <Compile Include="web\application\catalogbrowsing\stubs\StubStoreCatalog.cs" />
     <Compile Include="web\application\catalogbrowsing\ViewTheDepartmentsInADepartment.cs" />
     <Compile Include="web\application\catalogbrowsing\ViewTheDepartmentsInADepartmentRequest.cs" />
@@ -96,6 +96,7 @@
     <Compile Include="web\core\IContainRequestDetails.cs" />
     <Compile Include="web\core\ICreateControllerRequests.cs" />
     <Compile Include="web\core\IDisplayInformation.cs" />
+    <Compile Include="web\core\IFetchInformation.cs" />
     <Compile Include="web\core\IFindCommands.cs" />
     <Compile Include="web\core\IMatchARequest.cs" />
     <Compile Include="web\core\IProcessOneRequest.cs" />

@@ -7,11 +7,11 @@ namespace app.web.application.catalogbrowsing
   public class ViewTheProductsInADepartment : ISupportAUserFeature
   {
     IFindInformationInTheStore product_repository;
-    IDisplayInformation view_engine;
+    IDisplayInformation display_engine;
 
-    public ViewTheProductsInADepartment(IDisplayInformation view_engine, IFindInformationInTheStore product_repository)
+    public ViewTheProductsInADepartment(IDisplayInformation display_engine, IFindInformationInTheStore product_repository)
     {
-      this.view_engine = view_engine;
+      this.display_engine = display_engine;
       this.product_repository = product_repository;
     }
 
@@ -21,7 +21,7 @@ namespace app.web.application.catalogbrowsing
 
     public void run(IContainRequestDetails request)
     {
-      view_engine.display(product_repository.get_the_products_using(request.map<ViewTheProductsInADepartmentRequest>()));
+      display_engine.display(product_repository.get_the_products_using(request.map<ViewTheProductsInADepartmentRequest>()));
     }
   }
 }
