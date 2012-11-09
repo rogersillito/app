@@ -7,6 +7,10 @@ namespace app.web.core.aspnet
     IProcessRequests front_controller;
     ICreateControllerRequests request_factory;
 
+    public BasicHandler()
+    {
+    }
+
     public BasicHandler(IProcessRequests front_controller, ICreateControllerRequests request_factory)
     {
       this.front_controller = front_controller;
