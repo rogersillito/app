@@ -1,15 +1,9 @@
-﻿using System.Web;
-
-namespace app.web.core.aspnet
+﻿namespace app.web.core.aspnet
 {
   public class WebFormDisplayEngine : IDisplayInformation
   {
     ICreateViewsForReports view_factory;
     IGetTheCurrentlyExecutingWebRequest current_request;
-
-    public WebFormDisplayEngine():this(new WebFormFactory(),() => HttpContext.Current)
-    {
-    }
 
     public WebFormDisplayEngine(ICreateViewsForReports view_factory, IGetTheCurrentlyExecutingWebRequest current_request)
     {

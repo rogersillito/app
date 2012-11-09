@@ -80,6 +80,7 @@
     <Compile Include="Calculator.cs" />
     <Compile Include="ICalculate.cs" />
     <Compile Include="MessageGenerator.cs" />
+    <Compile Include="utility\DelegateExtensions.cs" />
     <Compile Include="web\application\catalogbrowsing\DepartmentItem.cs" />
     <Compile Include="web\application\catalogbrowsing\ProductItem.cs" />
     <Compile Include="web\application\catalogbrowsing\ViewAReport.cs" />
@@ -95,7 +96,6 @@
     <Compile Include="web\core\aspnet\IGetTheCurrentlyExecutingWebRequest.cs" />
     <Compile Include="web\core\aspnet\WebFormDisplayEngine.cs" />
     <Compile Include="web\core\aspnet\WebFormFactory.cs" />
-    <Compile Include="web\core\CachingQuery.cs" />
     <Compile Include="web\core\CommandRegistry.cs" />
     <Compile Include="web\core\FrontController.cs" />
     <Compile Include="web\core\IContainRequestDetails.cs" />

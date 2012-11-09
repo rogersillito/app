@@ -1,7 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Linq;
-using app.web.core.stubs;
 
 namespace app.web.core
 {
@@ -15,14 +13,6 @@ namespace app.web.core
     {
       this.commands = commands;
       this.special_case_factory = special_case_factory;
-    }
-
-    public CommandRegistry():this(new StubSetOfCommands(),
-                                  () =>
-                                  {
-                                    throw new NotImplementedException("You don't have the command");
-                                  })
-    {
     }
 
     public IProcessOneRequest get_the_command_that_can_run(IContainRequestDetails request)

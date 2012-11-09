@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using app.web.application.catalogbrowsing;
@@ -14,14 +15,12 @@ namespace app.web.core.stubs
 
     public IEnumerator<IProcessOneRequest> GetEnumerator()
     {
-      yield return build_report_for<GetTheProductsInADepartment, IEnumerable<ProductItem>>();
-      yield return build_report_for<GetTheMainDepartments, IEnumerable<DepartmentItem>>();
-      yield return build_report_for<GetTheDepartmentsInADepartment, IEnumerable<DepartmentItem>>();
+      yield break;
     }
 
     IProcessOneRequest build_report_for<TQueryObject, TModel>() where TQueryObject : IFetchAReport<TModel>, new()
     {
-      return new RequestCommand(x => true, new ViewAReport<TModel>(new TQueryObject()));
+      throw new NotImplementedException();
     }
 
     public class GetTheDepartmentsInADepartment : IFetchAReport<IEnumerable<DepartmentItem>>
