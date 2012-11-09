@@ -20,7 +20,11 @@ namespace app.specs
       {
         Func<int,bool> is_even = x => x%2 == 0;
 
-        
+        var param = Expression.Parameter(typeof(int));
+        var moduloExpression = Expression.Modulo(param, Expression.Constant(2));
+        var body = Expression.Equal(moduloExpression, Expression.Constant(0));
+        var etree = Expression.Lambda(body, param);
+
       };
     }
 
