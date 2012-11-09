@@ -1,4 +1,5 @@
 ﻿using System.Web;
+using app.utility.containers;
 
 namespace app.web.core.aspnet
 {
@@ -7,7 +8,8 @@ namespace app.web.core.aspnet
     IProcessRequests front_controller;
     ICreateControllerRequests request_factory;
 
-    public BasicHandler()
+    public BasicHandler():this(Container.fetch.an<IProcessRequests>(),
+      Container.fetch.an<ICreateControllerRequests>())
     {
     }
 
